@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
 
 import { CalculatorService } from '../services/calculator.service'
+import { Calculate } from '../models/calculate.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-calculator',
@@ -11,7 +14,7 @@ export class CalculatorComponent implements OnInit {
 
   private number1: string
   private number2: string
-  private result: number
+  private result: string
   private operation: string
 
   constructor(private calculatorService: CalculatorService) { }
@@ -69,9 +72,20 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
+  calculate(): void {
+    if(this.number2 === null)
+      return
+    
+    this.result = this.calculatorService.calculate(
+      parseFloat(this.number1),
+      parseFloat(this.number2),
+      this.operation
+    )
+  }
+
   get display(): string {
     if(this.result !== null)
-      return this.result.toString()
+      return this.result
     if(this.number2 !== null)
       return this.number2
 
