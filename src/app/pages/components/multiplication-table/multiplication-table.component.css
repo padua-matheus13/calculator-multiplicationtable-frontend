@@ -8,9 +8,19 @@
     font-weight:600
   }
   
-  .kz-input-table {
-    margin-top: 15px;
-    width: 400px;
-    height: 200px;
-    margin-left: 8px;
+.multiplication-table {
+  padding: 70px 70px 0 50px;
+}
+
+.container {
+  width: 250px;
+}
+
+.kz-input-table {
+  margin-top: 15px;
+  margin-left: 8px;
+  margin: 10px;
+  background-color: #5cb85c;
+  color: aliceblue;
+  text-align: center;
 }

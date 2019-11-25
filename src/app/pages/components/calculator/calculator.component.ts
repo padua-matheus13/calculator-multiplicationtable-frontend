@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculatorService } from '../../services/calculator.service'
+import { CalculatorService } from '../../../services/calculator.service'
 import { Calculate } from '../../models/calculate.model'
 
 @Component({
@@ -66,9 +66,12 @@ export class CalculatorComponent implements OnInit {
     if(this.number2 !== null) {
     
       this.createObj(this.number1, this.number2, this.operation)
-      this.result = this.calculatorService.calculate(this.calculateObj)
+      // this.result = this.calculatorService.calculate(this.calculateObj)
+      this.calculatorService.postCalculate(this.calculateObj).subscribe( (res: any) => {
+        this.number1 = res.result
+      })
       this.operation = op
-      this.number1 = this.result.toString()
+      this.number1 = this.result
       this.number2 = null
       this.result = null
     }
@@ -79,9 +82,10 @@ export class CalculatorComponent implements OnInit {
       return
     
     this.createObj(this.number1, this.number2, this.operation)
-    this.result = this.calculatorService.calculate(this.calculateObj)
-    this.number1 = this.result.toString()
-  
+    this.calculatorService.postCalculate(this.calculateObj).subscribe( (res: any) => {
+      this.result = res.result
+    })
+    
   }
 
   get display(): string { 
@@ -91,5 +95,5 @@ export class CalculatorComponent implements OnInit {
       return this.number2
 
     return this.number1
-    }
+  }
 }

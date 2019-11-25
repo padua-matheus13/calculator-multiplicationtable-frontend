@@ -8,6 +8,10 @@
     font-weight:600
   }
 
+  .calculate {
+      padding: 70px 70px 0 50px;
+  }
+
 .kz-btn {
     width: 100%;
     margin: 4px;
@@ -19,6 +23,8 @@
 }
 .kz-pad-20 {
     padding: 20px;
+    margin-right: 20px;
+    
 }
 .col.xs-3, .col.xs-9 {
     padding: 0px;

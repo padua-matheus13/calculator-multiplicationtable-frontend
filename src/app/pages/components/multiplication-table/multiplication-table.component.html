@@ -1,0 +1,15 @@
+<div class="multiplication-table">
+    <form>
+        <div class="form-group kz-form-value">
+          <label for="value">Escolha um número e a descubra seus multiplos</label>
+          <input type="number" class="form-control" id="input" placeholder="Insira um valor" ng-list="&#10;" ng-trim="false">
+        </div>
+         <button type="button" class="btn btn-primary" (click)="calculate()">Gerar Tabuada</button>
+    </form>
+    <div class="container">
+          <div class="form-control text-right kz-input-table" *ngFor="let item of result">
+            {{item}}
+          </div>
+          
+  </div>    
+</div>

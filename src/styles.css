@@ -4,3 +4,10 @@ body{
     align-items: center;
     text-align: center;
 }
+
+.toolbar {
+    padding: 5px;
+    background-color:#d9534f;
+    color: azure;  
+    font-family: 'Poppins', sans-serif;
+}
