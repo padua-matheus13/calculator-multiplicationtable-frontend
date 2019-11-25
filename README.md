@@ -2,7 +2,7 @@
 Projeto utiliza Firebase Cloud Functions para obter as respostas dos calculos.
 
 ## Configuração de ambiente
-Para executar o projeto na sua máquina, será necessário instalar o npm demais dependencias solicitadas
+Para executar o projeto na sua máquina, será necessário instalar o npm e demais dependencias solicitadas
 ```
 npm install 
 ```
