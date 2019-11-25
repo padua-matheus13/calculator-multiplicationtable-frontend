@@ -31,6 +31,7 @@ export class MultiplicationTableComponent implements OnInit {
       return
     }
 
+    debugger
     this.multiplicationTable.postCalculate(parseFloat(this.value)).subscribe( (res: any) => {
       this.result = res.result
       console.log(this.result)
