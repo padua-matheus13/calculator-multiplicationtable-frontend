@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
-
-import { CalculatorService } from '../services/calculator.service'
-import { Calculate } from '../models/calculate.model';
-import { Observable } from 'rxjs';
+import { CalculatorService } from '../../services/calculator.service'
+import { Calculate } from '../../models/calculate.model'
 
 @Component({
   selector: 'app-calculator',
@@ -16,11 +13,18 @@ export class CalculatorComponent implements OnInit {
   private number2: string
   private result: string
   private operation: string
+  private calculateObj = new Calculate()
 
   constructor(private calculatorService: CalculatorService) { }
 
   ngOnInit() {
     this.clearDisplay()
+  }
+
+  createObj(n1: string, n2: string, op: string) {
+    this.calculateObj.value1 = parseFloat(n1)
+    this.calculateObj.value2 = parseFloat(n2)
+    this.calculateObj.operation = op 
   }
 
   clearDisplay(): void {
@@ -60,11 +64,9 @@ export class CalculatorComponent implements OnInit {
     
     //operacao ja definida apos segundo numero
     if(this.number2 !== null) {
-      this.result = this.calculatorService.calculate(
-        parseFloat(this.number1),
-        parseFloat(this.number2),
-        this.operation
-      )
+    
+      this.createObj(this.number1, this.number2, this.operation)
+      this.result = this.calculatorService.calculate(this.calculateObj)
       this.operation = op
       this.number1 = this.result.toString()
       this.number2 = null
@@ -76,14 +78,13 @@ export class CalculatorComponent implements OnInit {
     if(this.number2 === null)
       return
     
-    this.result = this.calculatorService.calculate(
-      parseFloat(this.number1),
-      parseFloat(this.number2),
-      this.operation
-    )
+    this.createObj(this.number1, this.number2, this.operation)
+    this.result = this.calculatorService.calculate(this.calculateObj)
+    this.number1 = this.result.toString()
+  
   }
 
-  get display(): string {
+  get display(): string { 
     if(this.result !== null)
       return this.result
     if(this.number2 !== null)

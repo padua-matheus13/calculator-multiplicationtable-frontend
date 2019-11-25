@@ -7,19 +7,10 @@
     -moz-osx-font-smoothing: grayscale;
     font-weight:600
   }
-
-  .kz-btn {
-    width: 100%;
-    margin: 4px;
-}
-.kz-input-text {
-    margin-top: 3px;
-    width: 96%;
+  
+  .kz-input-table {
+    margin-top: 15px;
+    width: 400px;
+    height: 200px;
     margin-left: 8px;
-}
-.kz-pad-20 {
-    padding: 20px;
-}
-.col.xs-3, .col.xs-9 {
-    padding: 0px;
 }

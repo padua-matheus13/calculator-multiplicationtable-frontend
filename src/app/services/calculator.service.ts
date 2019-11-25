@@ -13,13 +13,10 @@ export class CalculatorService {
   
   constructor(private http: HttpClient) { }
    
-  calculate(value1: number, value2: number, operation: string): string {
-    let calculate = new Calculate
+  calculate(calculate: Calculate): string {
     let result: string
 
-    calculate.value1 = value1
-    calculate.value2 = value2
-    calculate.operation = operation
+    console.log(calculate)
 
     this.http.post(this.API_URL, calculate, {headers:
       new HttpHeaders({'content-type':'application/json'}), responseType:'text'})

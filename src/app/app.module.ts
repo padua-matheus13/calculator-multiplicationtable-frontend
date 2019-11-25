@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CalculatorModule } from './calculator/calculator.module'
+import { CalculatorModule } from './components/calculator/module/calculator.module'
 import { HttpClientModule } from '@angular/common/http';
+import { MultiplicationTableComponent } from './components/multiplication-table/multiplication-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MultiplicationTableComponent
   ],
   imports: [
     BrowserModule,

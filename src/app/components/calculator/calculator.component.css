@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight:600
+  }
+
+.kz-btn {
+    width: 100%;
+    margin: 4px;
+}
+.kz-input-text {
+    margin-top: 3px;
+    width: 96%;
+    margin-left: 8px;
+}
+.kz-pad-20 {
+    padding: 20px;
+}
+.col.xs-3, .col.xs-9 {
+    padding: 0px;
+}
